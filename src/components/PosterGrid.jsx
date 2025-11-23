@@ -1,5 +1,6 @@
 import PosterCard from './PosterCard.jsx';
 
+
 export default function PosterGrid({ movies, isLoading, onSelect }) {
   if (isLoading) {
     return (

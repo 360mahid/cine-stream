@@ -46,6 +46,9 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import "./index.css";
 
+
+
+
 export default function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -126,7 +129,7 @@ export default function App() {
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await fetch("/data/movies.json");
+        const res = await fetch("/movies.json");
         const data = await res.json();
         setMovies(Array.isArray(data) ? data : []);
 
@@ -179,7 +182,7 @@ export default function App() {
           <nav className="hidden md:flex items-center gap-1 text-sm font-medium">
             <Button
               variant="ghost"
-              className="h-10 px-4 text-white hover:bg-white/10"
+              className="h-10 px-4 text-white hover:bg-white/50"
             >
               <span className="relative">
                 <Home size={16} className="inline mr-1.5 -mt-0.5" />
@@ -220,7 +223,7 @@ export default function App() {
               <input
                 aria-label="Search"
                 className="w-full bg-white/5 border border-white/10 rounded-full pl-10 pr-4 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f4c272]/50 focus:border-transparent transition-all"
-                placeholder="Search movies, series..."
+                placeholder="Search"
               />
             </div>
           </div>
@@ -244,7 +247,7 @@ export default function App() {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48 bg-[#0f172a] border-white/10 text-white">
+              <DropdownMenuContent className="w-48 bg-[#beb373] border-white/10 text-white/80">
                 <DropdownMenuItem className="cursor-pointer hover:bg-white/10 focus:bg-white/10">
                   <User size={16} className="mr-2" />
                   Profile
